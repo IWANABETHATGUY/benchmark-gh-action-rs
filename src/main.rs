@@ -1,3 +1,6 @@
+use bench_action::fibonacci;
+
 fn main() {
-    println!("Hello, world!");
+    let res = fibonacci(5);
+    println!("{}", res);
 }
