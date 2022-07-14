@@ -1,16 +1,16 @@
 name: rust benchmark
-on: [pull_request]
-# on:
-#   issue_comment:
-#     types:
-#       - created
+# on: [pull_request]
+on:
+  issue_comment:
+    types:
+      - created
 
 jobs:
   benchmark:
     name: Run Rust benchmark example
     runs-on: ubuntu-latest
     # if: ${{ github.event.comment.body == 'comment'}}
-    # if: ${{ github.event.issue.pull_request && github.event.comment.body == '/bench'}}
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/bench'}}
     steps:
       - uses: actions/checkout@v2
       - run: rustup toolchain update nightly && rustup default nightly
