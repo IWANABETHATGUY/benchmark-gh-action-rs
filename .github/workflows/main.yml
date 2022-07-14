@@ -2,11 +2,13 @@ name: rust benchmark
 # on: [pull_request]
 on:
   issue_comment:
-    types: [ created ]
+    types:
+      - created
 
 jobs:
   benchmark:
     name: Run Rust benchmark example
+    if: ${{ github.event.comment.body == 'comment'}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
