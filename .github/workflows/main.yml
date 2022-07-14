@@ -9,7 +9,6 @@ jobs:
   benchmark:
     name: Run Rust benchmark example
     runs-on: ubuntu-latest
-    # if: ${{ github.event.comment.body == 'comment'}}
     if: github.event.issue.pull_request && contains(github.event.comment.body, '!bench')
     steps:
       - uses: actions/checkout@v2
