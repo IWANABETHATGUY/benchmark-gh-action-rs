@@ -1,5 +1,8 @@
 name: rust benchmark
-on: [pull_request]
+# on: [pull_request]
+on:
+  issue_comment:
+    types: [ created ]
 
 jobs:
   benchmark:
