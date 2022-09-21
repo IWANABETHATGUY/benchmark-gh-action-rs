@@ -19,7 +19,7 @@ jobs:
         run: cargo bench -- --output-format bencher | tee output.txt
 
       - name: Store benchmark result
-        uses: benchmark-action/github-action-benchmark@v1
+        uses: benchmark-action/github-action-benchmark@@1.14.0
         with:
           name: Rust Benchmark
           tool: "cargo"
@@ -33,7 +33,8 @@ jobs:
           alert-comment-cc-users: "@IWANABETHATGUY"
 
       - name: Store benchmark result - separate results repo
-        uses: benchmark-action/github-action-benchmark@v1
+        uses: benchmark-action/github-action-benchmark@v1.14.0
+
         with:
           name: Rust Benchmark
           tool: "cargo"
