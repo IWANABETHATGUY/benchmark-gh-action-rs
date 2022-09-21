@@ -8,5 +8,12 @@ pub fn fibonacci(mut n: i32) -> i32 {
     }
     a
 }
+#[cfg(test)]
+mod test {
+    use super::*;
 
-
+    #[test]
+    fn test_fib() {
+        assert_eq!(fibonacci(2), 0);
+    }
+}

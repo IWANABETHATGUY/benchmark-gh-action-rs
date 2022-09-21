@@ -1,15 +1,13 @@
-#![feature(test)]
-
-extern crate test;
 use bench_action::fibonacci;
-use test::Bencher;
+use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
 
-#[bench]
-fn fibonacci_30(b: &mut Bencher) {
-    b.iter(|| fibonacci(30))
+fn bench_fib_20(c: &mut Criterion) {
+    c.bench_function("BenchFib20", move |b| {
+        b.iter(|| {
+            let _ = fibonacci(20);
+        });
+    });
 }
 
-#[bench]
-fn fibonacci_20(b: &mut Bencher) {
-    b.iter(|| fibonacci(20))
-}
+criterion_group!(benches, bench_fib_20,);
+criterion_main!(benches);
