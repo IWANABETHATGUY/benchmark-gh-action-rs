@@ -1,12 +1,9 @@
-pub fn fibonacci(mut n: i32) -> i32 {
-    let mut a = 0;
-    let mut b = 1;
-    while n > 0 {
-        a = a + b;
-        b = a - b;
-        n -= 1;
+pub fn fibonacci(n: i32) -> i32 {
+    match n {
+        0 => 1,
+        1 => 1,
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
     }
-    a
 }
 #[cfg(test)]
 mod test {
