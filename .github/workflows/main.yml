@@ -31,8 +31,8 @@ jobs:
           # Show alert with commit comment on detecting possible performance regression
           fail-on-alert: false
 
-      # - name: Push benchmark result
-      #   run: git push 'https://IWANABETHATGUY:${{ secrets.GITHUB_TOKEN }}@github.com/IWANABETHATGUY/benchmark-gh-action-rs.git' gh-pages:gh-pages
+      - name: Push benchmark result
+        run: git push 'https://IWANABETHATGUY:${{ secrets.GITHUB_TOKEN }}@github.com/IWANABETHATGUY/stats.git' gh-pages:gh-pages
 
 # name: rust benchmark
 # # on: [pull_request]
