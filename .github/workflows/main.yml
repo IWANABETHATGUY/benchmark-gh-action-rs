@@ -24,7 +24,7 @@ jobs:
           name: Rust Benchmark
           tool: "cargo"
           output-file-path: output.txt
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.METRIC_TOKEN }}
           auto-push: true
           gh-repository: "github.com/IWANABETHATGUY/stats"
 
