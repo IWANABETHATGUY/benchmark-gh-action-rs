@@ -26,12 +26,12 @@ jobs:
           output-file-path: output.txt
           github-token: ${{ secrets.GITHUB_TOKEN }}
           gh-repository: "github.com/IWANABETHATGUY/stats"
-          auto-push: false
+          auto-push: true
           # Show alert with commit comment on detecting possible performance regression
           fail-on-alert: false
 
-      - name: Push benchmark result
-        run: git push 'https://IWANABETHATGUY:${{ secrets.GITHUB_TOKEN }}@github.com/IWANABETHATGUY/stats.git' gh-pages
+      # - name: Push benchmark result
+      #   run: git push 'https://I
 
 # name: rust benchmark
 # # on: [pull_request]
