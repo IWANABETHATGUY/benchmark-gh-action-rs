@@ -24,15 +24,15 @@ jobs:
           name: Rust Benchmark
           tool: "cargo"
           output-file-path: output.txt
-          github-token: ${{ secrets.METRIC_TOKEN }}
-          auto-push: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: false
           gh-repository: "github.com/IWANABETHATGUY/stats"
 
           # Show alert with commit comment on detecting possible performance regression
           fail-on-alert: false
 
-      # - name: Push benchmark result
-      #   run: git push 'https://IWANABETHATGUY:${{ secrets.GITHUB_TOKEN }}@github.com/IWANABETHATGUY/stats.git' gh-pages:gh-pages
+      - name: Push benchmark result
+        run: git push 'https://IWANABETHATGUY:${{ secrets.METRIC_TOKEN }}@github.com/IWANABETHATGUY/stats.git' gh-pages:gh-pages
 
 # name: rust benchmark
 # # on: [pull_request]
