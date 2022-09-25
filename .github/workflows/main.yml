@@ -8,7 +8,7 @@ permissions:
   contents: write
   deployments: write
   pull-requests: write
-
+  repository-projects: write
 jobs:
   benchmark:
     name: Run Criterion.rs benchmark example
