@@ -5,6 +5,7 @@ pub fn fibonacci(n: i32) -> i32 {
 #[cfg(test)]
 mod test {
     use super::*;
+
     #[test]
     fn test_fib() {
         assert_eq!(fibonacci(2), 0);
